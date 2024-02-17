@@ -30,6 +30,7 @@ function clear() {
 }
 
 function length() {
+    /*Return length of stack*/
     return this.top
 }
 

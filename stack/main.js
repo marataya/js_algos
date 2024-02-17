@@ -3,6 +3,7 @@
 
 import Stack_v1 from './stack_v1.js'
 import Stack_v2 from './stack_v2.js'
+import mulBase from "./convert_to_another_base.js";
 
 var stack = new Stack_v1()
 stack.push(5)
@@ -59,3 +60,6 @@ console.log("length: " + s.length());
 console.log(s.peek());
 s.push("Clayton");
 console.log(s.peek());
+
+console.log("Convert to base2 number")
+console.log("32 in base 2 = ", mulBase(32, 2))
