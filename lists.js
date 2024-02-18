@@ -1,5 +1,7 @@
-const fs = require('fs')
-const readline = require('readline')
+// const fs = require('fs')
+// const readline = require('readline')
+import fs from 'fs'
+import readline from 'readline'
 function List() {
     this.listSize = 0
     this.pos = 0
