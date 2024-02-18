@@ -4,6 +4,9 @@
 import Stack_v1 from './stack_v1.js'
 import Stack_v2 from './stack_v2.js'
 import mulBase from "./convert_to_another_base.js";
+import {isPalindrome} from "./palindrome.js";
+import {isBalancedParenthesis} from "./balanced_parenthesis.js";
+import {filter_yellow} from "./pez_dispenser.js";
 
 var stack = new Stack_v1()
 stack.push(5)
@@ -63,3 +66,14 @@ console.log(s.peek());
 
 console.log("Convert to base2 number")
 console.log("32 in base 2 = ", mulBase(32, 2))
+
+console.log("Palindrome")
+console.log(isPalindrome("racecar"))
+
+console.log("Balanced Parenthesis")
+console.log(isBalancedParenthesis("(a)b(c)d(e)f)(g)"))
+console.log(isBalancedParenthesis("(a)b(c)d(e)f(g)"))
+
+console.log("Clean Pez dispenser from yellow candies:")
+var dispenser = ['Y','W','W', 'R','W','Y','R','Y','R','W']
+console.log(filter_yellow(dispenser))
