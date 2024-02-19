@@ -6,6 +6,7 @@ export default function Queue() {
     this.back = back
     this.toString = toString
     this.empty = empty
+    this.count = count
 }
 
 function enqueue(e) {
@@ -30,4 +31,8 @@ function toString() {
 function empty() {
     if (this.dataStore.length === 0) return true
     else return false
+}
+
+function count() {
+    return this.dataStore.length
 }

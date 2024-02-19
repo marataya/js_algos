@@ -6,8 +6,6 @@ q.enqueue("Meredith")
 q.enqueue("Cynthia")
 q.enqueue("Jennifer")
 console.log(q.toString())
-q.dequeue()
-console.log(q.toString())
 console.log("Front of queue: " + q.front())
 console.log("Back of queue: " + q.back())
 
@@ -16,9 +14,13 @@ var femaleDancers = new Queue()
 getDancers(maleDancers, femaleDancers)
 console.log(maleDancers)
 console.log(femaleDancers)
-console.log(maleDancers.dequeue())
-console.log(maleDancers.empty())
 
 dance(maleDancers, femaleDancers)
+if (maleDancers.count() > 0) {
+    console.log("There are " + maleDancers.count() + " male dancer waiting to dance")
+}
+if (femaleDancers.count() > 0) {
+    console.log("There are " + femaleDancers.count() + " male dancer waiting to dance")
+}
 
 
