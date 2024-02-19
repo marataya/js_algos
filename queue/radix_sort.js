@@ -33,11 +33,14 @@ for (let i = 0; i < 10; i++) {
 
 let nums = []
 for (let i = 0; i < 10; i++) {
-    nums[i] = Math.floor(Math.floor(Math.random() * 101))
+    nums[i] = Math.floor(Math.random() * 100)
 }
 
+var a = new Queue()
+a.enqueue(undefined)
 console.log("Before radix sort:")
 displayArr(nums)
+// nums = [73, 7, 29, 4, 80, 58, 56, 83, 100, 96]
 distribute(nums, queues, 10, 1)
 collect(queues, nums)
 distribute(nums, queues, 10, 10)
