@@ -1,4 +1,4 @@
-import Queue from "./queue.js";
+import Queue_v2 from "./queue_v2.js";
 
 function distribute(nums, queues, n, digit) {
     for (let i = 0; i < n; i++) {
@@ -28,7 +28,7 @@ function displayArr(arr) {
 
 let queues = []
 for (let i = 0; i < 10; i++) {
-    queues[i] = new Queue()
+    queues[i] = new Queue_v2()
 }
 
 let nums = []
@@ -36,7 +36,7 @@ for (let i = 0; i < 10; i++) {
     nums[i] = Math.floor(Math.random() * 100)
 }
 
-var a = new Queue()
+var a = new Queue_v2()
 a.enqueue(undefined)
 console.log("Before radix sort:")
 displayArr(nums)

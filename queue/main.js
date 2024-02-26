@@ -1,7 +1,7 @@
-import Queue from "./queue.js";
+import Queue_v2 from "./queue_v2.js";
 import {dance, getDancers} from "./dancers.js";
 
-var q = new Queue()
+var q = new Queue_v2()
 q.enqueue("Meredith")
 q.enqueue("Cynthia")
 q.enqueue("Jennifer")
@@ -9,8 +9,8 @@ console.log(q.toString())
 console.log("Front of queue: " + q.front())
 console.log("Back of queue: " + q.back())
 
-var maleDancers = new Queue()
-var femaleDancers = new Queue()
+var maleDancers = new Queue_v2()
+var femaleDancers = new Queue_v2()
 getDancers(maleDancers, femaleDancers)
 console.log(maleDancers)
 console.log(femaleDancers)

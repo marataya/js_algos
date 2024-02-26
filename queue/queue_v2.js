@@ -1,4 +1,4 @@
-export default function Queue() {
+export default function Queue_v2() {
     this.dataStore = []
     this.enqueue = enqueue
     this.dequeue = dequeue

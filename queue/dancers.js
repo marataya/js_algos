@@ -1,5 +1,5 @@
     import fs from 'fs'
-import Queue from "./queue.js";
+import Queue_v2 from "./queue_v2.js";
 
 function Dancer(name, sex) {
     this.name = name
