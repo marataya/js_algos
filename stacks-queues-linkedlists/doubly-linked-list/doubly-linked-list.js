@@ -48,40 +48,87 @@ class DoublyLinkedList {
     }
 
     insertAt(idx, data) {
+        // if idx is invalid return
         if (idx < 0 || idx > this.length) { return null }
+
         if (idx === 0) {
-            const node = new Node(data)
-            node.next = this.head
-            this.head = node
-        } else {
-            let current = this.head
-            let previous = null
-
-            while (idx-- > 0) {
-                previous = current
-                current = current.next
-            }
-
-            const node = new Node(data)
-            node.next = current
-            previous.next = node
+            return this.prepend(data)
         }
+
+        if (idx === this.length) {
+            return this.append(data)
+        }
+
+
+        let current = this.head
+
+        while (idx-- > 1) {
+            current = current.next
+        }
+        const node = new Node(data)
+        node.next = current.next
+        node.prev = current
+        current.next.prev = node
+        current.next = node
+
+        this.length++
     }
-    removeFrom(idx) {
+
+    get(idx) {
+        // if idx is invalid return
+        if (idx < 0 || idx >= this.length) { return null }
+
+        let current = this.head
+
+        while (idx-- > 0) {
+            current = current.next
+        }
+        return current?.data
+    }
+
+
+    remove(idx) {
+        if (idx < 0 || idx >= this.length) { return null }
+
+
         if (idx === 0) {
             this.head = this.head.next
+            if (this.head) {
+                this.head.prev = null
+            } else {
+                this.tail = null
+            }
+        } else if (idx === this.length - 1) {
+            //Removing the last node
+            this.tail = this.tail.prev
+            if (this.tail) {
+                this.tail.next = null
+            } else {
+                this.head = null
+            }
         } else {
             let current = this.head
-            let previous = null
-
             while (idx-- > 0) {
-                previous = current
                 current = current.next
             }
 
-            previous.next = current.next
+            current.prev.next = current.next
+            current.next.prev = current.prev
         }
     }
+
+    contains(data) {
+        let current = this.head
+        while(current) {
+            if (current.data === data) {
+                return true
+            }
+            current = current.next
+        }
+        return false
+    }
+
+
     printAll() {
         let current = this.head
         while (current) {

@@ -1,30 +1,17 @@
-class Cuboid {
-    constructor(length, width, height) {
-        this.length = length
-        this.width = width
-        this.height = height
-    }
+const depthFirstTraversal = require("./binary-trees-graphs/depth-first-traversal");
+const Node = require("./binary-trees-graphs/node");
 
-    get surfaceArea() {
-        return 2 * (this.length * this.width + this.length * this.height + this.width * this.height)
-    }
+const root = new Node('a');
+const nodeB = new Node('b');
+const nodeC = new Node('c');
+const nodeD = new Node('d');
+const nodeE = new Node('e');
+const nodeF = new Node('f');
 
-    get volume() {
-        return this.length * this.width * this.height
-    }
-}
+root.left = nodeB;
+root.right = nodeC;
+nodeB.left = nodeD;
+nodeB.right = nodeE;
+nodeC.left = nodeF;
 
-class Cube extends Cuboid {
-    constructor(length) {
-        super(length, length, length)
-    }
-}
-
-// Example usage:
-const cuboid = new Cuboid(2, 3, 4)
-console.log(cuboid.surfaceArea) // 52
-console.log(cuboid.volume)      // 24
-
-const cube = new Cube(3)
-console.log(cube.surfaceArea)   // 54
-console.log(cube.volume)        // 27
+console.log(depthFirstTraversal(root))
