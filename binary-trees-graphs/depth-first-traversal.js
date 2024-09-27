@@ -1,14 +1,16 @@
+const Stack = require("./stack")
+
 function depthFirstTraversal(root) {
     if (!root) {
         return []
     }
 
     const result = []
-    const stack = []
+    const stack = new Stack()
 
     stack.push(root)
 
-    while(stack.length > 0) {
+    while(!stack.isEmpty()) {
         const current = stack.pop()
 
         result.push(current.data)
