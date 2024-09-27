@@ -1,4 +1,5 @@
 const depthFirstTraversal = require('./depth-first-traversal');
+const Node = require('./node');
 
 describe('Depth First Traversal', () => {
   test('Should perform depth-first traversal on the binary tree', () => {

@@ -1,4 +1,4 @@
-const depthFirstTraversal = require("./binary-trees-graphs/depth-first-traversal");
+const recDepthFirstTraversal = require("./binary-trees-graphs/depth-first-traversal-recursive");
 const Node = require("./binary-trees-graphs/node");
 
 const root = new Node('a');
@@ -14,4 +14,4 @@ nodeB.left = nodeD;
 nodeB.right = nodeE;
 nodeC.left = nodeF;
 
-console.log(depthFirstTraversal(root))
+console.log(recDepthFirstTraversal(root))
