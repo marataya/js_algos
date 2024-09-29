@@ -1,17 +1,15 @@
-const recDepthFirstTraversal = require("./binary-trees-graphs/depth-first-traversal-recursive");
-const Node = require("./binary-trees-graphs/node");
+const BinarySearchTree = require("./binary-trees-graphs/BST/binary-search-tree");
 
-const root = new Node('a');
-const nodeB = new Node('b');
-const nodeC = new Node('c');
-const nodeD = new Node('d');
-const nodeE = new Node('e');
-const nodeF = new Node('f');
+const bst = new BinarySearchTree()
 
-root.left = nodeB;
-root.right = nodeC;
-nodeB.left = nodeD;
-nodeB.right = nodeE;
-nodeC.left = nodeF;
+bst.insert(9)
+bst.insert(4)
+bst.insert(2)
+bst.insert(8)
+bst.insert(5)
+bst.insert(11)
+bst.insert(12)
 
-console.log(recDepthFirstTraversal(root))
+bst.remove(8)
+bst.printTree()
+// console.log(bst.lookup(11))
