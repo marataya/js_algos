@@ -1,15 +1,17 @@
-const BinarySearchTree = require("./binary-trees-graphs/BST/binary-search-tree");
+const Graph = require("./binary-trees-graphs/graph/graph");
 
-const bst = new BinarySearchTree()
 
-bst.insert(9)
-bst.insert(4)
-bst.insert(2)
-bst.insert(8)
-bst.insert(5)
-bst.insert(11)
-bst.insert(12)
+const g = new Graph()
 
-bst.remove(8)
-bst.printTree()
-// console.log(bst.lookup(11))
+g.addVertex("Tokyo")
+g.addVertex("Dallas")
+g.addVertex("Aspen")
+
+
+g.addEdge("Tokyo", "Dallas")
+g.addEdge("Tokyo", "Aspen")
+g.addEdge("Aspen", "Dallas")
+
+g.removeVertex("Dallas")
+
+g.printAdjacencyList()
